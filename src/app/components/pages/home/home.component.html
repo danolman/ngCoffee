@@ -1,1 +1,17 @@
-<p>home works!</p>
+<app-product></app-product>
+
+<section class="row">
+    <div class="col s12">
+        <p>Hola {{user.name}}</p>
+        <p><small>{{user.email}}</small></p>
+    </div>
+</section>
+
+<app-user-profile [userHistory]="history"></app-user-profile>
+
+<section class="row">
+    <div class="col s12 m6 l4" *ngFor="let product of products"> 
+        <app-products-list [productItem]="product"></app-products-list> 
+    </div>
+</section>
+<button class="btn">Holi</button>

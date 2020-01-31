@@ -1,0 +1,37 @@
+
+<section class="row">
+    <div class="col s12 l10 offset-l1">
+        <h5>
+            Admin products
+            <a href="#add_product" class="right waves-effect waves-light btn modal-trigger">Add product</a>
+        </h5>
+        <hr>
+    </div>
+    <div class="col s12 m4 l3" *ngFor="let product of products">
+        <div class="card">
+            <img [src]="product.photoUrl" alt="{{product.name}}">
+            <div>
+                <p>{{product.name}}</p>
+                <small>{{product.category}}</small>
+                <p>{{product.price}}</p>
+            </div>
+            <div>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div *ngFor="let product of products">
+    {{product.name}}
+    <br>
+    <i class="material-icons" (click)="deleteProduct(product)">delete</i>
+    <br>
+    <i class="material-icons" (click)="updateProduct(product)">edit</i>
+    <img style="width: 100%;" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+</div>
+
+<app-add-product></app-add-product>
+
+
+

@@ -1,0 +1,18 @@
+<h1>Sign up</h1>
+<form [formGroup]="registerForm" (ngSubmit)="onAddUser()">
+    <input type="text" formControlName="name" placeholder="Your name">
+    <br>
+    <input type="text" formControlName="lastName" placeholder="Your lastname">
+    <br>
+    <input type="text" formControlName="email" placeholder="Your email">
+    <br>
+    <input type="text" formControlName="password" placeholder="creat your password">
+    <br>
+    <input type="file" formControlName="photo" accept=".png, .jpg" (change)="onUpload($event)">
+    <br>
+    <input #imageUser type="text" [value]="urlImage | async">
+    <br><br>
+    <div style="width: 0; height: 20px; background: green;" [style.width]="( uploadPercent | async ) + '%'"></div>
+    <br>
+    <button type="submit">Create account</button>
+</form>

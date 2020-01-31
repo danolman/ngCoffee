@@ -1,0 +1,43 @@
+<div class="red darken-2 padding-top padding-bottom">
+    <section class="row">
+        <div class="col s12 l10 offset-l1">
+            <p class="white-text no-margin padding-bottom">Your consumption (<strong>{{userHistory.length}}</strong>) <span class="right">Total debt <strong>$ 0</strong></span></p>
+            <section class="history-contaniner">
+
+                    <div class="history-item" *ngFor="let item of userHistory">
+                        <div class="history-img" style="background-image: url(item.productImage);"></div>
+                        <div class="history-data padding-left padding-right">
+                            <p class="no-margin">
+                                <small>{{item.productCategory}}</small><small class="padding-left grey-text right">21/01/2020</small>
+                            </p>              
+                            <p class="no-margin name">{{item.productName}}</p>
+                            <p class="no-margin red-text text-darken-2">total: <strong>${{item.amount}}</strong></p>
+                        </div>
+                    </div>
+
+                <div class="history-item">
+                    <div class="history-img" style="background-image: url('assets/coffee/Capsula-de-cafe-nicaragua.webp');"></div>
+                    <div class="history-data padding-left padding-right">
+                        <p class="no-margin">
+                            <small></small><small class="padding-left grey-text right">21/01/2020</small>
+                        </p>              
+                        <p class="no-margin name">Variations Nordic Almond Cake Flavoured</p>
+                        <p class="no-margin red-text text-darken-2">total: <strong>$500</strong></p>
+                    </div>
+                </div>
+                <div class="history-item">
+                        <div class="history-img" style="background-image: url('assets/coffee/Capsula-de-cafe-nicaragua.webp');"></div>
+                        <div class="history-data padding-left padding-right">
+                            <p class="no-margin">
+                                <small>Ristretto</small><small class="padding-left grey-text right">21/01/2020</small>
+                            </p>              
+                            <p class="no-margin name">Mocha</p>
+                            <p class="no-margin red-text text-darken-2">total: <strong>$500</strong></p>
+                        </div>
+                    </div>
+            </section>
+        </div>
+    </section>
+    
+</div>
+

@@ -1,0 +1,63 @@
+
+<!-- Modal Structure -->
+<div id="add_product" class="modal">
+    <div class="modal-content">
+        <h4>Add product</h4>
+        
+            <section class="row">
+                <div class="col s12">
+                    <p class="center-align grey-text">Please, Choose a product image</p>
+                    
+                    
+                    <div class="add-img red darken-2" [class.pulse]="canAdd == false"
+                    [style.backgroundImage]="'url('+thumb+')'"
+                    >
+                        <input type="file" (change)="uploadFile($event)">
+                        <i class="material-icons" *ngIf="canAdd == false">camera_alt</i>
+                    </div>
+                   
+                        <p *ngIf="canAdd == false" class="grey-text text-darken-2 center-align">Uploading <span class="red-text text-darken-2">{{ uploadPercent | async }} %</span></p>
+                        
+  
+                </div>
+                <form [formGroup]="productForm" (ngSubmit)="onAddProd()">
+
+
+                    <div class="input-field col s12 m10 0ffset-m1">
+                        <select formControlName="category">
+                            <option value="Nesspresso">Nespresso</option>
+                            <option value="Dolce gusto">Dolce gusto</option>
+                        </select>
+                        <label>Choose product category</label>
+                    </div>
+
+                    <div class="input-field col s12 m10 0ffset-m1" >
+                        <input id="name" type="text" class="validate" formControlName="name">
+                        <label for="name">Product name</label>
+                    </div>
+                    <div class="input-field col s12 m10 0ffset-m1" >
+                            <input id="price" type="number" class="validate" formControlName="price">
+                            <label for="price">Product price</label>
+                    </div>
+                    <div class="col  s12 m10 0ffset-m1" >
+                        <p>
+                            <label>
+                                <input type="checkbox" class="filled-in" checked="checked" formControlName="available" />
+                                <span>Product available</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col s12 m10 0ffset-m1" >
+                        <button type="submit" [disabled]="!productForm.valid" class="btn red darken-3 col s12">
+                            Add product
+                        </button>
+                    </div>
+                </form>
+            </section>
+        
+        
+    </div>
+    <div class="modal-footer">
+        <button class="waves-effect waves-light btn-flat" (click)="closeModal()">Cancel</button>
+    </div>
+</div>

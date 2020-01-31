@@ -1,0 +1,52 @@
+.add-img{
+    width: 128px;
+    height: 128px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 16px auto;
+    position: relative;
+
+    &.opacity{
+        opacity: .3;
+    }
+
+    i{
+        position: absolute;
+        top: -24px;
+        bottom: 0;
+        left: -24px;
+        right: 0;
+        margin: auto;
+        transform: translateY(50%) translateX(50%);
+        color: white;
+    }
+
+    input[type="file"]{
+        width: 100%;
+        height: 100%;
+        background: red;
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+}
+
+.progress{
+    width: 100%;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+
+    .bar{
+        height: 20px;
+        width: 0;
+    }
+}
+
+.fake-hide{
+    opacity: 0;
+}

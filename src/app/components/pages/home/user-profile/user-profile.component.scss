@@ -1,0 +1,38 @@
+.history-contaniner{
+    width: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    .history-item{
+        display: inline-block;
+        background: white;
+        border-radius: 4px;
+        overflow: hidden;
+        max-width: 270px;
+        min-width: 270px;
+        margin-right: 16px;
+
+        .history-img{
+            float: left;
+            width: 60px !important;
+            height: 60px !important;
+            padding: 8px;
+            margin: 8px;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex-grow: 1;
+        }
+        .history-data{
+            float: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 8px;
+            width: calc(100% - 110px);
+            p.name{margin-top: 8px; margin-bottom: 8px;}
+        }
+    }
+}

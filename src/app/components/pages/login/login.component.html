@@ -1,0 +1,13 @@
+<h1>Sign up</h1>
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <input type="text" formControlName="email" placeholder="Your email">
+    <br>
+    <input type="text" formControlName="password" placeholder="creat your password">
+    <br>
+    <button type="submit">Login</button>
+</form>
+<hr>
+<br>
+<button  (click)="forgotPassword()">Recuperar contraseña</button>
+
+
